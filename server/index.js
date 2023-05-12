@@ -3,10 +3,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 
+//It is for seperating routes related to post from the index.js folder
 import postRoutes from "./routes/posts.js";
 
 const app = express();
 
+//All the routes to ./routes/post.js will be accessed using localhost://5000/posts url
 app.use("/posts", postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -16,7 +18,7 @@ app.use(cors());
 //Cnnecting to Mongodb Database
 
 const CONNECTION_URL =
-  "mongodb+srv://aryachawdhary:Reminiscence2023@cluster0.bzuf1ws.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://ayush81029:ayush81029@cluster0.w77swhj.mongodb.net/";
 
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
