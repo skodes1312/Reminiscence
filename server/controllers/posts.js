@@ -1,7 +1,10 @@
+//this is for keeping functionalities of the ./routes/posts.js files in a seprate file so that we can easily handle ./routes/posts.js
+
 import PostMessage from "../models/postMessage.js";
 
 export const getPosts = async (req, res) => {
   try {
+    //await because .find() takes a lot of time. So, it must be async.
     const postMessages = await PostMessage.find();
 
     res.status(200).json(postMessages);
