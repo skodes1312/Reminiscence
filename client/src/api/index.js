@@ -1,4 +1,4 @@
-// This is help in fetching the data from the API or our database.
+// This helps in fetching the data from the API or our database.
 // It is promise based.
 
 import axios from "axios";
