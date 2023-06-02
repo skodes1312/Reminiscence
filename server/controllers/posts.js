@@ -7,6 +7,7 @@ export const getPosts = async (req, res) => {
     //await because .find() takes a lot of time. So, it must be async.
     const postMessages = await PostMessage.find();
 
+    console.log(postMessages);
     res.status(200).json(postMessages);
   } catch (error) {
     res.status(404).json({ message: error.message });
